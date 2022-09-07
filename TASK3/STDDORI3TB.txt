@@ -1,0 +1,7 @@
+CREATE TABLE STTM_POPULATE_FCUST(
+  customer_type     VARCHAR2(35),
+    customer_category VARCHAR2(15),
+    field_description     VARCHAR2(35) not null,
+    mandatory_validations VARCHAR2(35),
+    CONSTRAINT PK_STTM_POPULATE_FCUST PRIMARY KEY (customer_type,customer_category)
+    );

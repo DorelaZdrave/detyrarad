@@ -1,0 +1,27 @@
+create table STTM_DORI_CUST_MASTER_FCUST
+(
+  customer_type     VARCHAR2(35) not null,
+  customer_category VARCHAR2(15) not null,
+  maker_id          VARCHAR2(12),
+  checker_id        VARCHAR2(12),
+  checker_dt_stamp  DATE,
+  maker_dt_stamp    DATE,
+  mod_no            NUMBER(4),
+  record_stat       CHAR(1) default 'O',
+  auth_stat         CHAR(1) default 'U',
+  once_auth         CHAR(1) default 'N',
+CONSTRAINT PK_STTM_DORI_CUST_MASTER_FCUST PRIMARY KEY (customer_type)
+);
+
+CREATE OR REPLACE SYNONYM STTMS_DORI_CUST_MASTER_FCUST FOR STTM_DORI_CUST_MASTER_FCUST;
+
+
+create table STTM_DORI_FIELD_DETAIL_FCUST
+(
+  customer_type         VARCHAR2(35) not null,
+  field_description     VARCHAR2(35) not null,
+  mandatory_validations VARCHAR2(35),
+CONSTRAINT PK_STTM_DORI_FIELD_DETAIL_FCUST PRIMARY KEY (customer_type,field_description)
+);
+
+CREATE OR REPLACE SYNONYM STTMS_DORI_FIELD_DETAIL_FCUST FOR STTM_DORI_FIELD_DETAIL_FCUST;
